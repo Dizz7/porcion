@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Porción · Visualizador nutricional</title>
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a class="brand" href="./">◒ <span>porción<span class="dot">.</span></span></a><span class="badge">ESTUDIO DE PORCIONES <b>MOCK</b></span></header>
+<main>
+<div class="intro"><div><p class="eyebrow">DEL GRAMA AL PLATO</p><h1>Una forma de ver lo que comes.</h1><p>Arma una comida y explora sus porciones en tres dimensiones.</p></div><button id="example" class="secondary">Cargar ejemplo ↗</button></div>
+<div class="workspace">
+<section class="panel catalog"><div class="section-title"><h2>01 <span>Elige tus alimentos</span></h2></div><p class="muted">Pesos cocidos · sin aceite añadido</p><div id="catalog"></div><div class="note">Cada alimento se añade una vez. Puedes ajustar su cantidad directamente en el plato.</div></section>
+<section class="stage" aria-label="Visualizador de plato tridimensional"><div class="stage-top"><span class="badge">VISTA 3D <i></i></span><span id="weight">0 g en el plato</span></div><div id="scene" role="img" aria-label="Plato 3D. Arrastra para girar y usa la rueda para acercar."></div><div id="empty">Tu plato, tu punto de partida.<small>Añade un alimento para comenzar.</small></div><p id="render-error" hidden>No se pudo iniciar la vista 3D. Prueba un navegador con WebGL habilitado. Los cálculos siguen disponibles.</p><div class="view-controls"><button id="rotate" title="Girar plato" aria-label="Girar plato">↻</button><button id="zoom-in" aria-label="Acercar">＋</button><button id="zoom-out" aria-label="Alejar">−</button><button id="reset-view">Restablecer vista</button></div><div class="stage-bottom">Arrastra para girar · Desliza o pellizca para acercar<span>Representación aproximada</span></div></section>
+<aside class="panel summary"><h2>02 <span>Tu comida en números</span></h2><p class="muted">Totales aproximados de tu plato</p><div class="energy"><span>ENERGÍA TOTAL</span><div><strong id="kcal">0</strong> kcal</div></div><div id="macros"></div><div class="divider"></div><div class="plate-title"><h3>En tu plato <span id="count">0</span></h3><button id="clear" class="text-button" disabled>Limpiar</button></div><div id="portions"></div><p id="no-items" class="muted">Todavía no hay alimentos.<br>Empieza con uno de la izquierda.</p></aside>
+</div>
+<footer><span>◌ Una ayuda visual para conversar sobre las porciones.</span><span>Mock educativo · Valores y tamaños aproximados, sin validación clínica.</span></footer>
+<p id="status" class="sr-only" role="status" aria-live="polite"></p>
+</main><script type="module" src="app.js"></script>
+</body></html>
